@@ -18,7 +18,7 @@ A simple wrapper around http.Client to provide for timeouts
 package main
 
 import(
-    "httpclient"
+    httpclient "github.com/dmichael/go-httptimeoutclient"
     "time"
 )
 
