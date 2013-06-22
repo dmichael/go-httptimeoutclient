@@ -20,13 +20,16 @@ package main
 import(
     httpclient "github.com/dmichael/go-httptimeoutclient"
     "time"
+    "fmt"
 )
 
 func main() {
-    httpClient := httpclient.NewWithTimeout(500*time.Millisecond, 1*time.Second)
+    httpClient := httpclient.NewTimeoutClient(500*time.Millisecond, 1*time.Second)
     resp, err := httpClient.Get("http://google.com")
     if err != nil {
         fmt.Println("Rats! Google is down.")
     }
+    fmt.Println(resp)
 }
+
 ```
