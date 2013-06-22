@@ -25,11 +25,14 @@ import(
 
 func main() {
     httpClient := httpclient.NewTimeoutClient(500*time.Millisecond, 1*time.Second)
+    
     resp, err := httpClient.Get("http://google.com")
+    
     if err != nil {
         fmt.Println("Rats! Google is down.")
+    } else {
+        fmt.Println(resp)
     }
-    fmt.Println(resp)
 }
 
 ```
